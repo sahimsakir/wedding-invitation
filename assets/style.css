@@ -720,7 +720,7 @@ body {
     .details.act1 .section-header,
     .details.act2 .section-header,
     .details.act3 .section-header {
-        font-size: 1em;
+        font-size: 1.25em;
     }
 
     .details.act1 .paragraph,
@@ -730,6 +730,7 @@ body {
     }
 
     .details.act1 img {
+        top: 350px;
         left: -150px;
     }
 
