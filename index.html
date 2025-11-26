@@ -40,13 +40,28 @@
 		});
 
 		function openInvitation() {
+			startMusic(); // <-- start music here
 			document.getElementById("content-frame").src = "invitation.html";
 		}
 
 		function openFront() {
 			document.getElementById("content-frame").src = "front.html";
 		}
+
+		function startMusic() {
+			try {
+				const frame = document.getElementById("music-frame");
+				const audio = frame.contentWindow.document.getElementById("bg-music");
+				if (audio) {
+					audio.muted = false;
+					audio.play().catch(() => { });
+				}
+			} catch (e) {
+				console.log("Music start error:", e);
+			}
+		}
 	</script>
+
 
 
 </body>
