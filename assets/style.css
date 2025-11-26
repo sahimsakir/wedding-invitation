@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Satisfy&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -307,7 +306,7 @@ body {
 .details.act3 .header {
     padding: 5px 10px;
     text-align: left;
-    font: 400 3em Lobster;
+    font: 400 3em  Satisfy;
     color: #e9c372;
 }
 
@@ -316,7 +315,7 @@ body {
 .details.act3 .section-header {
     padding: 5px 10px;
     text-align: left;
-    font-family: Great Vibes;
+    font-family: Alex Brush;
     font-size: 3em;
     color: #ffdb8d;
 }
@@ -327,10 +326,9 @@ body {
     padding: 5px 10px;
     width: 90%;
     text-align: left;
-    letter-spacing: 1px;
-    font-family: Satisfy;
+    font-family: Montserrat, sans-serif;
     color: #ffe6b0;
-    font-size: 2.05em;
+    font-size: 1.85em;
 }
 
 .details.act2 a,
@@ -478,7 +476,7 @@ body {
     .details.act1 .paragraph,
     .details.act2 .paragraph,
     .details.act3 .paragraph {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
 
 }
@@ -532,7 +530,7 @@ body {
     .details.act1 .paragraph,
     .details.act2 .paragraph,
     .details.act3 .paragraph {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
 }
@@ -591,7 +589,7 @@ body {
     .details.act1 .paragraph,
     .details.act2 .paragraph,
     .details.act3 .paragraph {
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
 
     .details.act1 img {
@@ -617,7 +615,7 @@ body {
         height: 400px;
         width: 400px;
         top: -470px;
-        left: 80%;
+        left: 70%;
     }
 
     .circle .lifecycle img {
@@ -634,7 +632,7 @@ body {
 
     .main-circle.act2 .circle #two img {
         top: -40px;
-        left: 50%;
+        left: 35%;
     }
 
     .main-circle.act2 .circle #three img {
@@ -728,7 +726,7 @@ body {
     .details.act1 .paragraph,
     .details.act2 .paragraph,
     .details.act3 .paragraph {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     .details.act1 img {
@@ -781,7 +779,7 @@ body {
     .details.act2 .paragraph,
     .details.act3 .paragraph {
         width: 110%;
-        font-size: 0.9em;
+        font-size: 0.7em;
         margin-bottom: 5px;
     }
 
