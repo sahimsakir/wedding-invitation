@@ -714,13 +714,13 @@ body {
     .details.act1 .one .header,
     .details.act2 .two .header,
     .details.act3 .three .header {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
 
     .details.act1 .section-header,
     .details.act2 .section-header,
     .details.act3 .section-header {
-        font-size: 1.25em;
+        font-size: 1.5em;
     }
 
     .details.act1 .paragraph,
