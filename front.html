@@ -9,13 +9,13 @@
     <link rel="stylesheet" type="text/css" href="assets/Index-style.css" media="all" />
 </head>
 
-<body>
+<body onclick="parent.startMusic();">
 
     <div class="container">
         <label>
             <input type="checkbox" />
             <div class="flip-card">
-                <div class="front">
+                <div class="front" >
                     <img src="assets/images/envelop/envelop-front.png" alt="" />
                 </div>
 
@@ -37,23 +37,6 @@
     </div>
 
     <script src="assets/index-script.js"></script>
-
-    <script>
-        (function () {
-            const front = document.querySelector('.front');
-            if (!front) {
-                console.log('No .front element found');
-                return;
-            }
-            front.addEventListener('click', function () {
-                if (window.parent && typeof window.parent.startMusic === 'function') {
-                    window.parent.startMusic();
-                } else {
-                    console.log('parent.startMusic is not available');
-                }
-            });
-        })();
-    </script>
 
 </body>
 
