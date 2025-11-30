@@ -22,6 +22,28 @@ body {
     transition: 0.9s ease-in;
 }
 
+#back-controller {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+    z-index: 999999;
+}
+
+#back-controller #backBtn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#back-controller #backBtn:hover {
+    color: #f0c27b;
+}
+
 .menu-bg.active {
     transition: none !important;
 }
@@ -306,7 +328,7 @@ body {
 .details.act3 .header {
     padding: 5px 10px;
     text-align: left;
-    font: 400 3em  Satisfy;
+    font: 400 3em Satisfy;
     color: #e9c372;
 }
 
