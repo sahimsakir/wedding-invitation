@@ -12,7 +12,6 @@
 img {
     -webkit-touch-callout: none !important;
     -webkit-user-drag: none !important;
-    pointer-events: none !important;
 }
 
 body {
