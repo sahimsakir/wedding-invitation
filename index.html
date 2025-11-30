@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Wedding Invitation</title>
 	<link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/dce09b9dbf.js"></script>
 
 	<style>
 		html,
@@ -24,6 +26,31 @@
 			top: 0;
 			left: 0;
 		}
+
+		#audio-controller {
+			position: fixed;
+			top: 20px;
+			left: 20px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			opacity: 0;
+			transition: all 0.5s ease;
+			z-index: 999999;
+		}
+
+		#audio-lottie {
+			width: 60px;
+			height: 60px;
+		}
+
+		#audio-controller #muteBtn {
+			background-color: transparent;
+			color: #fff;
+			border: none;
+			font-size: 14px;
+			cursor: pointer;
+		}
 	</style>
 
 </head>
@@ -34,13 +61,21 @@
 
 	<iframe id="content-frame" src="front.html" frameborder="0"></iframe>
 
+	<div id="audio-controller">
+		<div id="audio-lottie">
+			<lottie-player id="audioAnim" src="https://lottie.host/dad518ee-a19b-4c1a-bb99-1f51249f7013/GZvTgHO03w.json"
+				background="transparent" speed="1" autoplay loop></lottie-player>
+		</div>
+
+		<button id="muteBtn"><i class="fa-solid fa-play"></i></button>
+	</div>
+	<!-- Lottie -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<script>
-		document.addEventListener("contextmenu", function (e) {
-			e.preventDefault();
-		});
+		document.addEventListener("contextmenu", e => e.preventDefault());
 
 		function openInvitation() {
-			startMusic(); // <-- start music here
+			startMusic();
 			document.getElementById("content-frame").src = "invitation.html";
 		}
 
@@ -48,19 +83,82 @@
 			document.getElementById("content-frame").src = "front.html";
 		}
 
-		function startMusic() {
-			try {
-				const frame = document.getElementById("music-frame");
-				const audio = frame.contentWindow.document.getElementById("bg-music");
-				if (audio) {
-					audio.muted = false;
-					audio.play().catch(() => { });
-				}
-			} catch (e) {
-				console.log("Music start error:", e);
-			}
+		let isPaused = false;
+
+		function getAudio() {
+			const frame = document.getElementById("music-frame");
+			return frame.contentWindow.document.getElementById("bg-music");
 		}
+
+		function getLottie() {
+			return document.getElementById("audioAnim");
+		}
+
+		function startMusic() {
+			const audio = getAudio();
+			const lottie = getLottie();
+			if (!audio) return;
+
+			audio.volume = 1;
+			audio.muted = false;
+			audio.play().catch(() => { });
+			lottie.play();
+
+			document.getElementById("audio-controller").style.opacity = 1;
+		}
+
+		// Smooth fade in/out
+		function fadeVolume(audio, targetVolume, duration = 700, callback = () => { }) {
+			const steps = 20;
+			const interval = duration / steps;
+			const volumeStep = (targetVolume - audio.volume) / steps;
+
+			let currentStep = 0;
+
+			const fade = setInterval(() => {
+				currentStep++;
+				audio.volume = Math.min(1, Math.max(0, audio.volume + volumeStep));
+
+				if (currentStep >= steps) {
+					clearInterval(fade);
+					callback();
+				}
+			}, interval);
+		}
+
+		document.getElementById("muteBtn").addEventListener("click", function () {
+			const audio = getAudio();
+			const lottie = getLottie();
+			if (!audio) return;
+
+			isPaused = !isPaused;
+
+			// PAUSE logic
+			if (isPaused) {
+				this.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+				// Smooth fade-out → pause audio → pause Lottie
+				fadeVolume(audio, 0, 700, () => {
+					audio.pause();
+					lottie.pause();
+				});
+			}
+
+			// PLAY logic
+			else {
+				this.innerHTML = '<i class="fa-solid fa-play"></i>';
+
+				audio.volume = 0;
+				audio.play().catch(() => { });
+				fadeVolume(audio, 1, 700);
+
+				// Resume Lottie animation
+				lottie.play();
+			}
+		});
 	</script>
+
+
 
 
 
