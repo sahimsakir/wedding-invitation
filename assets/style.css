@@ -22,28 +22,6 @@ body {
     transition: 0.9s ease-in;
 }
 
-#back-controller {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    display: flex;
-    align-items: center;
-    transition: all 0.5s ease;
-    z-index: 999999;
-}
-
-#back-controller #backBtn {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-#back-controller #backBtn:hover {
-    color: #f0c27b;
-}
-
 .menu-bg.active {
     transition: none !important;
 }
