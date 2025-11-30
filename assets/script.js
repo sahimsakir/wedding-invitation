@@ -90,17 +90,16 @@ function showContent2() {
   rightArrow.setAttribute('src','assets/images/right-arrow.png')
 }
 function showContent3() {
-  i=3;
-  main.classList.remove('act2','act1', 'active');
-  main_bg.classList.remove('act2','act1', 'active');
-  details.classList.remove('act2','act1', 'active');
-  details.classList.add('act3');
-  main.classList.add('act3');
-  main_bg.classList.add('act3');
-  nb.classList.add('active');
-  leftArrow.setAttribute('src','assets/images/left-arrow.png');
-  rightArrow.setAttribute('src','assets/images/right-arrow-light.png')
-
+  i = 3;
+  main.classList.remove("act2", "act1", "active");
+  main_bg.classList.remove("act2", "act1", "active");
+  details.classList.remove("act2", "act1", "active");
+  details.classList.add("act3");
+  main.classList.add("act3");
+  main_bg.classList.add("act3");
+  nb.classList.add("active");
+  leftArrow.setAttribute("src", "assets/images/left-arrow.png");
+  rightArrow.setAttribute("src", "assets/images/right-arrow-light.png");
 }
 
 
