@@ -94,6 +94,7 @@
 		}
 
 		function startMusic() {
+			document.getElementById("muteBtn").innerHTML = '<i class="fa-solid fa-play"></i>';
 			const audio = getAudio();
 			const lottie = getLottie();
 			if (!audio) return;
