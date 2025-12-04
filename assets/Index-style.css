@@ -83,10 +83,12 @@ input {
     display: none;
 }
 
-:checked+.flip-card {
+/* :checked+.flip-card {
+    transform: rotateY(180deg);
+} */
+.flip-card.active {
     transform: rotateY(180deg);
 }
-
 .front {
     animation: envelopeFloat 3s ease-in-out infinite;
     transform-style: preserve-3d;
