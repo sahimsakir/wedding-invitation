@@ -82,10 +82,6 @@ label {
 input {
     display: none;
 }
-
-/* :checked+.flip-card {
-    transform: rotateY(180deg);
-} */
 .flip-card.active {
     transform: rotateY(180deg);
 }
