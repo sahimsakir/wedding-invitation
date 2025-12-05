@@ -1,5 +1,6 @@
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
+const wrapper = document.querySelector(".wrapper");
+wrapper.addEventListener("click", function () {
+  wrapper.classList.add("active");
 });
 
 const flipCard = document.querySelector(".flip-card");

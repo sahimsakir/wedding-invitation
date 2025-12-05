@@ -2,16 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-img {
-    -webkit-touch-callout: none !important;
-    -webkit-user-drag: none !important;
 }
 
 body {
@@ -212,12 +202,12 @@ input {
 
 
 
-.wrapper:hover .lid.one {
+.wrapper.active .lid.one {
     transform: rotateX(90deg);
     transition-delay: 0s;
 }
 
-.wrapper:hover .lid.one::after {
+.wrapper.active .lid.one::after {
     content: "";
     position: absolute;
     top: 0;
@@ -228,16 +218,16 @@ input {
     pointer-events: auto;
 }
 
-.wrapper:hover .lid.two {
+.wrapper.active .lid.two {
     transform: rotateX(180deg);
     transition-delay: 0.25s;
 }
 
-.wrapper:hover .letter {
+.wrapper.active .letter {
     animation: letterLift 1.5s ease forwards;
 }
 
-.wrapper:hover .letter .click-me {
+.wrapper.active .letter .click-me {
     animation: clickIcon 0.8s ease-out 1.3s forwards;
 }
 
