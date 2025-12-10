@@ -51,11 +51,36 @@
 			font-size: 16px;
 			cursor: pointer;
 		}
+
+		#video-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: black;
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 999999999;
+		}
+
+		#video-overlay video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	</style>
 
 </head>
 
 <body>
+	<div id="video-overlay">
+		<video id="preloaderVideo" playsinline preload="auto">
+			<source src="assets/videos/preloader.mp4" type="video/mp4">
+		</video>
+	</div>
+
 
 	<iframe id="music-frame" src="music-player.html" style="display:none;"></iframe>
 
@@ -72,9 +97,34 @@
 	<!-- Lottie -->
 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<script>
+		// function openInvitation() {
+		// 	document.getElementById("content-frame").src = "invitation.html";
+		// }
+
 		function openInvitation() {
-			document.getElementById("content-frame").src = "invitation.html";
+			const overlay = document.getElementById("video-overlay");
+			const video = document.getElementById("preloaderVideo");
+
+			// Show overlay
+			overlay.style.display = "flex";
+
+			// Restart from beginning
+			video.currentTime = 0;
+
+			// Play smoothly
+			video.play().catch(() => { });
+
+			// When video finishes → show invitation
+			video.onended = () => {
+				document.getElementById("content-frame").src = "invitation.html";
+
+				// Optional fade-out
+				setTimeout(() => {
+					overlay.style.display = "none";
+				}, 300);
+			};
 		}
+
 
 		function openFront() {
 			document.getElementById("content-frame").src = "front.html";
