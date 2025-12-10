@@ -190,6 +190,7 @@ label {
 
 .letter .click-me {
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 20px;
     right: 20px;
