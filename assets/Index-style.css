@@ -69,10 +69,6 @@ label {
     transform: rotateY(180deg);
 }
 
-input {
-    display: none;
-}
-
 .flip-card.active {
     transform: rotateY(180deg);
 }
@@ -194,7 +190,6 @@ input {
 
 .letter .click-me {
     opacity: 0;
-    pointer-events: none;
     position: absolute;
     top: 20px;
     right: 20px;
